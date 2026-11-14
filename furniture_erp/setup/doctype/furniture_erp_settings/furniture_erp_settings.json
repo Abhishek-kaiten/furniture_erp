@@ -1,0 +1,245 @@
+{
+ "doctype": "DocType",
+ "name": "Furniture ERP Settings",
+ "module": "Setup",
+ "engine": "InnoDB",
+ "actions": [],
+ "links": [],
+ "states": [],
+ "fields": [
+  {
+   "fieldname": "section_defaults",
+   "fieldtype": "Section Break",
+   "label": "Defaults"
+  },
+  {
+   "fieldname": "default_currency",
+   "fieldtype": "Link",
+   "label": "Default Currency",
+   "options": "Currency",
+   "reqd": 1,
+   "default": "INR"
+  },
+  {
+   "fieldname": "col_defaults_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_length_unit",
+   "fieldtype": "Select",
+   "label": "Default Length Unit",
+   "options": "mm\ncm\ninch",
+   "reqd": 1,
+   "default": "mm"
+  },
+  {
+   "fieldname": "col_defaults_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_area_unit",
+   "fieldtype": "Select",
+   "label": "Default Area Unit",
+   "options": "sq m\nsq ft",
+   "default": "sq m"
+  },
+  {
+   "fieldname": "section_naming_series",
+   "fieldtype": "Section Break",
+   "label": "Naming Series"
+  },
+  {
+   "fieldname": "family_naming_series",
+   "fieldtype": "Data",
+   "label": "Product Family Naming Series",
+   "reqd": 1,
+   "default": "FPF-.#####"
+  },
+  {
+   "fieldname": "col_ns_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "material_naming_series",
+   "fieldtype": "Data",
+   "label": "Material Naming Series",
+   "reqd": 1,
+   "default": "FMAT-.#####"
+  },
+  {
+   "fieldname": "col_ns_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "finish_naming_series",
+   "fieldtype": "Data",
+   "label": "Finish Naming Series",
+   "reqd": 1,
+   "default": "FFIN-.#####"
+  },
+  {
+   "fieldname": "specification_naming_series",
+   "fieldtype": "Data",
+   "label": "Specification Naming Series",
+   "reqd": 1,
+   "default": "FSPEC-.YYYY.-.#####"
+  },
+  {
+   "fieldname": "section_catalogue_rules",
+   "fieldtype": "Section Break",
+   "label": "Catalogue Rules"
+  },
+  {
+   "fieldname": "enforce_allowed_materials",
+   "fieldtype": "Check",
+   "label": "Enforce Allowed Materials on Spec",
+   "default": "1"
+  },
+  {
+   "fieldname": "col_rules_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "enforce_allowed_finishes",
+   "fieldtype": "Check",
+   "label": "Enforce Allowed Finishes on Spec",
+   "default": "1"
+  },
+  {
+   "fieldname": "col_rules_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "allow_draft_spec_duplication",
+   "fieldtype": "Check",
+   "label": "Allow Duplicate Draft Specs",
+   "default": "0"
+  },
+  {
+   "fieldname": "default_gst_hsn_code",
+   "fieldtype": "Data",
+   "label": "Default HSN Code"
+  },
+  {
+   "fieldname": "spec_requires_approval",
+   "fieldtype": "Check",
+   "label": "Specification Requires Approval",
+   "default": "0"
+  },
+  {
+   "fieldname": "section_integration",
+   "fieldtype": "Section Break",
+   "label": "Integration"
+  },
+  {
+   "fieldname": "enable_portal_catalogue",
+   "fieldtype": "Check",
+   "label": "Enable Portal Catalogue",
+   "default": "0"
+  },
+  {
+   "fieldname": "col_int_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "integration_webhook_url",
+   "fieldtype": "Data",
+   "label": "Integration Webhook URL",
+   "options": "URL"
+  },
+  {
+   "fieldname": "col_int_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "erpnext_note",
+   "fieldtype": "Small Text",
+   "label": "ERPNext Status Note",
+   "read_only": 1,
+   "default": "ERPNext is not installed on this site. Company/Item/Warehouse/Customer links are deferred until ERPNext is added."
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 1,
+   "print": 1,
+   "email": 0
+  },
+  {
+   "role": "Furniture ERP Administrator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 1,
+   "print": 1,
+   "email": 0
+  },
+  {
+   "role": "Furniture Product Manager",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 0
+  }
+ ],
+ "field_order": [
+  "section_defaults",
+  "default_currency",
+  "col_defaults_2",
+  "default_length_unit",
+  "col_defaults_3",
+  "default_area_unit",
+  "section_naming_series",
+  "family_naming_series",
+  "col_ns_2",
+  "material_naming_series",
+  "col_ns_3",
+  "finish_naming_series",
+  "specification_naming_series",
+  "section_catalogue_rules",
+  "enforce_allowed_materials",
+  "col_rules_2",
+  "enforce_allowed_finishes",
+  "col_rules_3",
+  "allow_draft_spec_duplication",
+  "default_gst_hsn_code",
+  "spec_requires_approval",
+  "section_integration",
+  "enable_portal_catalogue",
+  "col_int_2",
+  "integration_webhook_url",
+  "col_int_3",
+  "erpnext_note"
+ ],
+ "issingle": 1,
+ "is_submittable": 0,
+ "track_changes": 1,
+ "icon": "setting"
+}

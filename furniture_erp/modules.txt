@@ -1,1 +1,10 @@
-Furniture_erp
+Setup
+Furniture Catalogue
+Sales Design
+Procurement
+Manufacturing
+Inventory
+Quality
+Delivery Installation
+Service Warranty
+Finance Costing

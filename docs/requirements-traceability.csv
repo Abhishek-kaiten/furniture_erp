@@ -1,0 +1,29 @@
+requirement_id,category,source,title,description,milestone,status,blocked_by,notes
+REQ-A-01,Scope A,Master Build Prompt v1.0 Part A §8.A,Product vision,End-to-end furniture ERP on Frappe with catalogue-driven configurable products,M0,planned,,Documented in architecture.md
+REQ-A-02,Scope B,Master Build Prompt v1.0 Part A §8.B,Stakeholders & org,Roles for sales production accounts catalogue,M0,planned,,role-permission-matrix.md
+REQ-A-03,Scope C,Master Build Prompt v1.0 Part A §8.C,User management,Standard Frappe users roles profiles,M0,planned,,Available today
+REQ-A-04,Scope D,Master Build Prompt v1.0 Part A §8.D,Product catalogue,Product families materials finishes specifications,M2,planned,,M1-M2 DocTypes
+REQ-A-05,Scope E,Master Build Prompt v1.0 Part A §8.E,Configurator,Specification attributes drive SKU and pricing,M4,planned,ERPNext,Blocked until Item/Quotation
+REQ-A-06,Scope F,Master Build Prompt v1.0 Part A §8.F,CRM & leads,Lead opportunity customer tracking,M4,blocked,ERPNext,Customer DocType unavailable
+REQ-A-07,Scope G,Master Build Prompt v1.0 Part A §8.G,Quotation & pricing,Quotations with spec attachment and approval,M4,blocked,ERPNext,
+REQ-A-08,Scope H,Master Build Prompt v1.0 Part A §8.H,Sales orders,SO from quotation with validation against approved spec,M4,blocked,ERPNext,
+REQ-A-09,Scope I,Master Build Prompt v1.0 Part A §8.I,BOM & engineering,BOM linked to specification,M5,blocked,ERPNext,
+REQ-A-10,Scope J,Master Build Prompt v1.0 Part A §8.J,Production planning,Work orders job cards production plan,M5,blocked,ERPNext,
+REQ-A-11,Scope K,Master Build Prompt v1.0 Part A §8.K,Procurement,MR PO receipt for raw materials,M5,blocked,ERPNext,
+REQ-A-12,Scope L,Master Build Prompt v1.0 Part A §8.L,Inventory,Multi-warehouse stock ledger valuation,M5,blocked,ERPNext,
+REQ-A-13,Scope M,Master Build Prompt v1.0 Part A §8.M,Delivery,Fulfilment delivery notes,M6,blocked,ERPNext,
+REQ-A-14,Scope N,Master Build Prompt v1.0 Part A §8.N,Installation,Installation job tracking and sign-off,M6,planned,ERPNext,Custom DocType on ERPNext base
+REQ-A-15,Scope O,Master Build Prompt v1.0 Part A §8.O,Accounting & GST,AR AP GST invoicing India,M3,blocked,ERPNext,DEC-004 India assumed
+REQ-A-16,Scope P,Master Build Prompt v1.0 Part A §8.P,Integrations & portal,Webhooks payment logistics optional portal,M8,deferred,,integration-register.md
+REQ-C-01,Invariant,Master Build Prompt v1.0 Part C,ERPNext system of record,Stock and GL only via ERPNext,M0,planned,ERPNext,INV-C-01
+REQ-C-02,Invariant,Master Build Prompt v1.0 Part C,Single SKU truth,One sellable Item per configured product,M4,planned,ERPNext,INV-C-02
+REQ-C-03,Invariant,Master Build Prompt v1.0 Part C,Catalogue ownership,furniture_erp owns family material finish spec,M2,planned,,
+REQ-C-04,Invariant,Master Build Prompt v1.0 Part C,Document immutability,Cancel amend pattern for submitted docs,M4,planned,ERPNext,INV-C-04
+REQ-C-05,Invariant,Master Build Prompt v1.0 Part C,Server-side permissions,No security only in client,M1,planned,,
+REQ-C-06,Invariant,Master Build Prompt v1.0 Part C,GST compliance,India tax templates and HSN,M3,planned,ERPNext,Pending jurisdiction confirm
+REQ-C-07,Invariant,Master Build Prompt v1.0 Part C,Audit trail,Versioning comments stock GL history,M0,planned,,Partial today via Frappe
+REQ-C-08,Invariant,Master Build Prompt v1.0 Part C,Integration idempotency,Logged retried outbound integrations,M3,planned,,Furniture Integration Log
+REQ-DISC-01,Discovery,Stakeholder input,BRD,Business requirements document,M0,blocked,BRD missing,Use Master Prompt baseline
+REQ-DISC-02,Discovery,Environment,ERPNext install,Install ERPNext for standard masters,M0.5,blocked,ERPNext,DEC-001
+REQ-DISC-03,Discovery,Environment,Bench parity,Align test_carpenter with carpenter,M0.5,deferred,,Not validated in M0
+REQ-DISC-04,Discovery,Environment,Git branch alignment,sites/apps.json vs feature branch,M0,planned,,See discovery-report.md

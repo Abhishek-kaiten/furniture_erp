@@ -3,7 +3,7 @@ name = "furniture_erp"
 authors = [
     { name = "abhishek", email = "abhishekj@kaitensoftware.com"}
 ]
-description = "For furniture erp system "
+description = "Furniture manufacturing, trading, project and retail ERP"
 requires-python = ">=3.14"
 readme = "README.md"
 dynamic = ["version"]
