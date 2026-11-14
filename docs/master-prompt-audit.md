@@ -62,7 +62,7 @@
 - [x] Requirement + Job File  
 - [x] Settings / roles / workspace  
 - [x] Migrate / tests (8/8 OK on `carpenter`)  
-- [ ] Push branch / PR → `dev`  
+- [x] Push branch / PR → `dev` (https://github.com/Abhishek-kaiten/furniture_erp/pull/2)  
 
 ## Status legend (this PR)
 
