@@ -1,9 +1,9 @@
 [project]
-name = "carpenter_erp"
+name = "furniture_erp"
 authors = [
     { name = "abhishek", email = "abhishekj@kaitensoftware.com"}
 ]
-description = "For carpenter erp system "
+description = "For furniture erp system "
 requires-python = ">=3.14"
 readme = "README.md"
 dynamic = ["version"]
