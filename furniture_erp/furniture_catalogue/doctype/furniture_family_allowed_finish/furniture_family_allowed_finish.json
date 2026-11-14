@@ -1,0 +1,40 @@
+{
+ "doctype": "DocType",
+ "name": "Furniture Family Allowed Finish",
+ "module": "Furniture Catalogue",
+ "engine": "InnoDB",
+ "actions": [],
+ "links": [],
+ "states": [],
+ "fields": [
+  {
+   "fieldname": "finish",
+   "fieldtype": "Link",
+   "label": "Finish",
+   "options": "Furniture Finish",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "application",
+   "fieldtype": "Select",
+   "label": "Application",
+   "options": "\nCarcass\nShutter\nTop\nAll",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "is_default",
+   "fieldtype": "Check",
+   "label": "Default",
+   "in_list_view": 1
+  }
+ ],
+ "permissions": [],
+ "field_order": [
+  "finish",
+  "application",
+  "is_default"
+ ],
+ "istable": 1,
+ "editable_grid": 1
+}

@@ -1,0 +1,250 @@
+{
+ "doctype": "DocType",
+ "name": "Furniture Product Family",
+ "module": "Furniture Catalogue",
+ "engine": "InnoDB",
+ "actions": [],
+ "links": [],
+ "states": [],
+ "fields": [
+  {
+   "fieldname": "section_identity",
+   "fieldtype": "Section Break",
+   "label": "Identity"
+  },
+  {
+   "fieldname": "family_name",
+   "fieldtype": "Data",
+   "label": "Family Name",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "bold": 1
+  },
+  {
+   "fieldname": "col_id_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "family_code",
+   "fieldtype": "Data",
+   "label": "Family Code",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "col_id_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nActive\nDiscontinued",
+   "reqd": 1,
+   "default": "Active",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "default_lead_time_days",
+   "fieldtype": "Int",
+   "label": "Default Lead Time (Days)"
+  },
+  {
+   "fieldname": "section_classification",
+   "fieldtype": "Section Break",
+   "label": "Classification"
+  },
+  {
+   "fieldname": "product_category",
+   "fieldtype": "Select",
+   "label": "Product Category",
+   "options": "Seating\nTables\nStorage\nKitchen\nBedroom\nOffice\nOutdoor\nOther",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "col_cls_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "construction_type",
+   "fieldtype": "Select",
+   "label": "Construction Type",
+   "options": "Panel\nSolid Wood\nHybrid\nUpholstered\nMetal"
+  },
+  {
+   "fieldname": "col_cls_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "is_configurable",
+   "fieldtype": "Check",
+   "label": "Configurable",
+   "default": "1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_media",
+   "fieldtype": "Section Break",
+   "label": "Media"
+  },
+  {
+   "fieldname": "hero_image",
+   "fieldtype": "Attach Image",
+   "label": "Hero Image"
+  },
+  {
+   "fieldname": "drawing_attachment",
+   "fieldtype": "Attach",
+   "label": "Reference Drawing"
+  },
+  {
+   "fieldname": "section_allowed_materials",
+   "fieldtype": "Section Break",
+   "label": "Allowed Materials"
+  },
+  {
+   "fieldname": "allowed_materials",
+   "fieldtype": "Table",
+   "label": "Allowed Materials",
+   "options": "Furniture Family Allowed Material"
+  },
+  {
+   "fieldname": "section_allowed_finishes",
+   "fieldtype": "Section Break",
+   "label": "Allowed Finishes"
+  },
+  {
+   "fieldname": "allowed_finishes",
+   "fieldtype": "Table",
+   "label": "Allowed Finishes",
+   "options": "Furniture Family Allowed Finish"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "FPF-.#####",
+   "hidden": 1,
+   "default": "FPF-.#####"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 1,
+   "share": 1,
+   "print": 1,
+   "email": 0
+  },
+  {
+   "role": "Furniture ERP Administrator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 1,
+   "share": 1,
+   "print": 1,
+   "email": 0
+  },
+  {
+   "role": "Furniture Product Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 1,
+   "share": 1,
+   "print": 1,
+   "email": 0
+  },
+  {
+   "role": "Sales Manager",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 0
+  },
+  {
+   "role": "Designer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 0
+  }
+ ],
+ "field_order": [
+  "section_identity",
+  "family_name",
+  "col_id_2",
+  "family_code",
+  "col_id_3",
+  "status",
+  "description",
+  "default_lead_time_days",
+  "section_classification",
+  "product_category",
+  "col_cls_2",
+  "construction_type",
+  "col_cls_3",
+  "is_configurable",
+  "section_media",
+  "hero_image",
+  "drawing_attachment",
+  "section_allowed_materials",
+  "allowed_materials",
+  "section_allowed_finishes",
+  "allowed_finishes",
+  "naming_series"
+ ],
+ "autoname": "naming_series:",
+ "title_field": "family_name",
+ "search_fields": "family_name,family_code,product_category,status",
+ "track_changes": 1,
+ "allow_rename": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

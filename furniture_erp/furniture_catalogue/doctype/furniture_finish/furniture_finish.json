@@ -1,0 +1,243 @@
+{
+ "doctype": "DocType",
+ "name": "Furniture Finish",
+ "module": "Furniture Catalogue",
+ "engine": "InnoDB",
+ "actions": [],
+ "links": [],
+ "states": [],
+ "fields": [
+  {
+   "fieldname": "section_identity",
+   "fieldtype": "Section Break",
+   "label": "Identity"
+  },
+  {
+   "fieldname": "finish_name",
+   "fieldtype": "Data",
+   "label": "Finish Name",
+   "reqd": 1,
+   "in_list_view": 1,
+   "bold": 1
+  },
+  {
+   "fieldname": "col_f_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "finish_type",
+   "fieldtype": "Select",
+   "label": "Finish Type",
+   "options": "Laminate\nVeneer\nPU Paint\nMelamine\nEdge Band\nPowder Coat\nFabric\nLeather\nOther",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "col_f_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nInactive",
+   "reqd": 1,
+   "default": "Active",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "finish_code",
+   "fieldtype": "Data",
+   "label": "Finish Code"
+  },
+  {
+   "fieldname": "linked_item_code",
+   "fieldtype": "Data",
+   "label": "Linked Item Code (ERPNext)"
+  },
+  {
+   "fieldname": "section_appearance_and_process",
+   "fieldtype": "Section Break",
+   "label": "Appearance and Process"
+  },
+  {
+   "fieldname": "color_name",
+   "fieldtype": "Data",
+   "label": "Color Name"
+  },
+  {
+   "fieldname": "col_a_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "color_code",
+   "fieldtype": "Data",
+   "label": "Color / Shade Code"
+  },
+  {
+   "fieldname": "col_a_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gloss_level",
+   "fieldtype": "Select",
+   "label": "Gloss Level",
+   "options": "\nMatte\nSatin\nGloss"
+  },
+  {
+   "fieldname": "grain_direction_required",
+   "fieldtype": "Check",
+   "label": "Grain Direction Required"
+  },
+  {
+   "fieldname": "curing_lead_time_days",
+   "fieldtype": "Int",
+   "label": "Curing Lead Time (Days)"
+  },
+  {
+   "fieldname": "section_compliance",
+   "fieldtype": "Section Break",
+   "label": "Compliance"
+  },
+  {
+   "fieldname": "voc_compliant",
+   "fieldtype": "Check",
+   "label": "Low VOC Compliant"
+  },
+  {
+   "fieldname": "col_cmp_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fire_rating",
+   "fieldtype": "Data",
+   "label": "Fire Rating"
+  },
+  {
+   "fieldname": "col_cmp_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hsn_code",
+   "fieldtype": "Data",
+   "label": "HSN Code"
+  },
+  {
+   "fieldname": "section_media",
+   "fieldtype": "Section Break",
+   "label": "Media"
+  },
+  {
+   "fieldname": "swatch_image",
+   "fieldtype": "Attach Image",
+   "label": "Swatch Image"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "FFIN-.#####",
+   "hidden": 1,
+   "default": "FFIN-.#####"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 1,
+   "print": 1,
+   "email": 0
+  },
+  {
+   "role": "Furniture ERP Administrator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 1,
+   "print": 1,
+   "email": 0
+  },
+  {
+   "role": "Furniture Product Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 1,
+   "print": 1,
+   "email": 0
+  },
+  {
+   "role": "Designer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 0
+  }
+ ],
+ "field_order": [
+  "section_identity",
+  "finish_name",
+  "col_f_2",
+  "finish_type",
+  "col_f_3",
+  "status",
+  "finish_code",
+  "linked_item_code",
+  "section_appearance_and_process",
+  "color_name",
+  "col_a_2",
+  "color_code",
+  "col_a_3",
+  "gloss_level",
+  "grain_direction_required",
+  "curing_lead_time_days",
+  "section_compliance",
+  "voc_compliant",
+  "col_cmp_2",
+  "fire_rating",
+  "col_cmp_3",
+  "hsn_code",
+  "section_media",
+  "swatch_image",
+  "naming_series"
+ ],
+ "autoname": "naming_series:",
+ "title_field": "finish_name",
+ "search_fields": "finish_name,finish_type,finish_code,status",
+ "track_changes": 1,
+ "allow_rename": 1
+}

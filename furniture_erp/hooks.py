@@ -1,7 +1,7 @@
 app_name = "furniture_erp"
-app_title = "Furniture_erp"
+app_title = "Furniture ERP"
 app_publisher = "abhishek"
-app_description = "For furniture erp system "
+app_description = "Furniture manufacturing, trading, project and retail ERP"
 app_email = "abhishekj@kaitensoftware.com"
 app_license = "mit"
 
@@ -12,18 +12,18 @@ use_json_request_body = True
 # Apps
 # ------------------
 
-# required_apps = []
+# ERPNext will be declared once installed on the site (see docs/assumptions-decisions-register.md).
+# required_apps = ["erpnext"]
 
 # Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "furniture_erp",
-# 		"logo": "/assets/furniture_erp/logo.png",
-# 		"title": "Furniture_erp",
-# 		"route": "/furniture_erp",
-# 		"has_permission": "furniture_erp.api.permission.has_app_permission",
-# 	}
-# ]
+add_to_apps_screen = [
+	{
+		"name": "furniture_erp",
+		"logo": "/assets/furniture_erp/logo.png",
+		"title": "Furniture ERP",
+		"route": "/app/furniture-erp-settings",
+	}
+]
 
 # The dock, the rail down the left of the desk, is a document rather than a hook. Author it in
 # Manage Dock on a developer-mode site and press Export to App, and it is written to
@@ -108,7 +108,8 @@ use_json_request_body = True
 # ------------
 
 # before_install = "furniture_erp.install.before_install"
-# after_install = "furniture_erp.install.after_install"
+after_install = "furniture_erp.install.after_install"
+after_migrate = "furniture_erp.install.after_migrate"
 
 # Uninstallation
 # ------------

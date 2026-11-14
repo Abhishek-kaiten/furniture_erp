@@ -1,39 +1,27 @@
-### Furniture_erp
+### Furniture ERP
 
-For furniture erp system 
+Furniture manufacturing, trading, project and retail ERP built on the Frappe Framework.
+
+> **Note:** ERPNext is not yet installed on the development site. Catalogue masters (Product Family, Material, Finish, Specification) work on Frappe alone. Sales/stock/accounting flows require ERPNext — see `docs/assumptions-decisions-register.md`.
 
 ### Installation
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
-
 ```bash
 cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch develop
-bench install-app furniture_erp
+bench get-app https://github.com/Abhishek-kaiten/furniture_erp.git --branch dev
+bench --site [site] install-app furniture_erp
+bench --site [site] migrate
 ```
 
-### Contributing
+### Branching
 
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
+- `main` — stable
+- `dev` — integration / testing
+- Feature work: branch from `dev`, open PR back into `dev`
 
-```bash
-cd apps/furniture_erp
-pre-commit install
-```
+### Documentation
 
-Pre-commit is configured to use the following tools for checking and formatting your code:
-
-- ruff
-- eslint
-- prettier
-- pyupgrade
-### CI
-
-This app can use GitHub Actions for CI. The following workflows are configured:
-
-- CI: Installs this app and runs unit tests on every push to `develop` branch.
-- Linters: Runs [Frappe Semgrep Rules](https://github.com/frappe/semgrep-rules) and [pip-audit](https://pypi.org/project/pip-audit/) on every pull request.
-
+See `/docs` for architecture, DocType specs, workflows, and milestone plan.
 
 ### License
 
