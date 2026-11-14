@@ -21,41 +21,72 @@
    "bold": 1
   },
   {
-   "fieldname": "col_m_2",
+   "fieldname": "c2",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "material_code",
+   "fieldtype": "Data",
+   "label": "Material Code",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "c3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "active",
+   "fieldtype": "Check",
+   "label": "Active",
+   "default": "1",
+   "in_standard_filter": 1
   },
   {
    "fieldname": "material_type",
    "fieldtype": "Select",
    "label": "Material Type",
-   "options": "Plywood\nMDF\nParticle Board\nHardwood\nHardware\nGlass\nStone\nOther",
+   "options": "Wood\nPlywood\nMDF\nParticle Board\nMetal\nGlass\nFabric\nFoam\nHardware\nPolish\nOther",
    "reqd": 1,
    "in_list_view": 1,
    "in_standard_filter": 1
   },
   {
-   "fieldname": "col_m_3",
-   "fieldtype": "Column Break"
+   "fieldname": "material_grade",
+   "fieldtype": "Data",
+   "label": "Material Grade",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Data",
+   "label": "Item Code (ERPNext)"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Data",
+   "label": "Supplier (ERPNext)"
   },
   {
    "fieldname": "status",
    "fieldtype": "Select",
-   "label": "Status",
+   "label": "Legacy Status",
    "options": "Active\nInactive",
-   "reqd": 1,
    "default": "Active",
-   "in_list_view": 1
+   "hidden": 1
   },
   {
    "fieldname": "grade",
    "fieldtype": "Data",
-   "label": "Grade"
+   "label": "Legacy Grade",
+   "hidden": 1
   },
   {
    "fieldname": "linked_item_code",
    "fieldtype": "Data",
    "label": "Linked Item Code (ERPNext)",
-   "description": "Forward-compatible Item code once ERPNext is installed."
+   "hidden": 1
   },
   {
    "fieldname": "section_physical",
@@ -63,27 +94,45 @@
    "label": "Physical"
   },
   {
-   "fieldname": "default_thickness_mm",
+   "fieldname": "thickness",
    "fieldtype": "Float",
-   "label": "Default Thickness (mm)"
+   "label": "Thickness"
   },
   {
-   "fieldname": "col_p_2",
+   "fieldname": "p2",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "length",
+   "fieldtype": "Float",
+   "label": "Length"
+  },
+  {
+   "fieldname": "p3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "width",
+   "fieldtype": "Float",
+   "label": "Width"
+  },
+  {
+   "fieldname": "default_thickness_mm",
+   "fieldtype": "Float",
+   "label": "Default Thickness (mm)",
+   "hidden": 1
   },
   {
    "fieldname": "default_width_mm",
    "fieldtype": "Float",
-   "label": "Default Width (mm)"
-  },
-  {
-   "fieldname": "col_p_3",
-   "fieldtype": "Column Break"
+   "label": "Default Width (mm)",
+   "hidden": 1
   },
   {
    "fieldname": "default_length_mm",
    "fieldtype": "Float",
-   "label": "Default Length (mm)"
+   "label": "Default Length (mm)",
+   "hidden": 1
   },
   {
    "fieldname": "weight_per_unit",
@@ -93,10 +142,15 @@
   {
    "fieldname": "uom",
    "fieldtype": "Select",
-   "label": "UOM",
+   "label": "Unit",
    "options": "Nos\nSq Meter\nMeter\nKg\nSheet\nRoll",
    "reqd": 1,
    "default": "Nos"
+  },
+  {
+   "fieldname": "minimum_stock",
+   "fieldtype": "Float",
+   "label": "Minimum Stock"
   },
   {
    "fieldname": "hsn_code",
@@ -104,9 +158,28 @@
    "label": "HSN Code"
   },
   {
-   "fieldname": "section_costing_hints",
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "fieldname": "section_costing",
    "fieldtype": "Section Break",
-   "label": "Costing Hints"
+   "label": "Costing"
+  },
+  {
+   "fieldname": "standard_rate",
+   "fieldtype": "Currency",
+   "label": "Standard Rate"
+  },
+  {
+   "fieldname": "cost2",
+   "fieldtype": "Column Break"
   },
   {
    "fieldname": "reference_rate",
@@ -114,7 +187,7 @@
    "label": "Reference Rate"
   },
   {
-   "fieldname": "col_c_2",
+   "fieldname": "cost3",
    "fieldtype": "Column Break"
   },
   {
@@ -122,10 +195,6 @@
    "fieldtype": "Link",
    "label": "Currency",
    "options": "Currency"
-  },
-  {
-   "fieldname": "col_c_3",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "last_rate_updated_on",
@@ -153,7 +222,7 @@
    "amend": 0,
    "report": 1,
    "export": 1,
-   "import": 0,
+   "import": 1,
    "share": 1,
    "print": 1,
    "email": 0
@@ -169,7 +238,7 @@
    "amend": 0,
    "report": 1,
    "export": 1,
-   "import": 0,
+   "import": 1,
    "share": 1,
    "print": 1,
    "email": 0
@@ -191,7 +260,55 @@
    "email": 0
   },
   {
-   "role": "Procurement Manager",
+   "role": "Furniture Administrator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 1,
+   "print": 1,
+   "email": 0
+  },
+  {
+   "role": "Sales Manager",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 0
+  },
+  {
+   "role": "Sales Executive",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 0
+  },
+  {
+   "role": "CRM Executive",
    "read": 1,
    "write": 0,
    "create": 0,
@@ -221,37 +338,97 @@
    "share": 0,
    "print": 1,
    "email": 0
+  },
+  {
+   "role": "Furniture Designer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 0
+  },
+  {
+   "role": "Procurement Manager",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 0
+  },
+  {
+   "role": "Purchase Executive",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 0
   }
  ],
  "field_order": [
   "section_identity",
   "material_name",
-  "col_m_2",
+  "c2",
+  "material_code",
+  "c3",
+  "active",
   "material_type",
-  "col_m_3",
+  "material_grade",
+  "item_code",
+  "supplier",
   "status",
   "grade",
   "linked_item_code",
   "section_physical",
+  "thickness",
+  "p2",
+  "length",
+  "p3",
+  "width",
   "default_thickness_mm",
-  "col_p_2",
   "default_width_mm",
-  "col_p_3",
   "default_length_mm",
   "weight_per_unit",
   "uom",
+  "minimum_stock",
   "hsn_code",
-  "section_costing_hints",
+  "description",
+  "image",
+  "section_costing",
+  "standard_rate",
+  "cost2",
   "reference_rate",
-  "col_c_2",
+  "cost3",
   "currency",
-  "col_c_3",
   "last_rate_updated_on",
   "naming_series"
  ],
- "autoname": "naming_series:",
+ "autoname": "field:material_code",
  "title_field": "material_name",
- "search_fields": "material_name,material_type,grade,status",
+ "search_fields": "material_name,material_code,material_type,material_grade",
  "track_changes": 1,
  "allow_rename": 1
 }

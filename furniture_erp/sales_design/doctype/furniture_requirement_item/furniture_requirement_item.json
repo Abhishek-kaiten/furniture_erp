@@ -1,0 +1,127 @@
+{
+ "doctype": "DocType",
+ "name": "Furniture Requirement Item",
+ "module": "Sales Design",
+ "engine": "InnoDB",
+ "actions": [],
+ "links": [],
+ "states": [],
+ "fields": [
+  {
+   "fieldname": "furniture_category",
+   "fieldtype": "Link",
+   "label": "Furniture Category",
+   "options": "Furniture Category",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "furniture_model",
+   "fieldtype": "Link",
+   "label": "Furniture Model",
+   "options": "Furniture Model",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "furniture_variant",
+   "fieldtype": "Link",
+   "label": "Furniture Variant",
+   "options": "Furniture Variant",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Data",
+   "label": "Item Code (ERPNext)"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "label": "Quantity",
+   "reqd": 1,
+   "default": "1",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "width",
+   "fieldtype": "Float",
+   "label": "Width"
+  },
+  {
+   "fieldname": "height",
+   "fieldtype": "Float",
+   "label": "Height"
+  },
+  {
+   "fieldname": "depth",
+   "fieldtype": "Float",
+   "label": "Depth"
+  },
+  {
+   "fieldname": "material",
+   "fieldtype": "Link",
+   "label": "Material",
+   "options": "Furniture Material"
+  },
+  {
+   "fieldname": "color",
+   "fieldtype": "Link",
+   "label": "Color",
+   "options": "Furniture Color"
+  },
+  {
+   "fieldname": "finish",
+   "fieldtype": "Link",
+   "label": "Finish",
+   "options": "Furniture Finish"
+  },
+  {
+   "fieldname": "estimated_rate",
+   "fieldtype": "Currency",
+   "label": "Estimated Rate",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "estimated_amount",
+   "fieldtype": "Currency",
+   "label": "Estimated Amount",
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "customization_required",
+   "fieldtype": "Check",
+   "label": "Customization Required"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "permissions": [],
+ "field_order": [
+  "furniture_category",
+  "furniture_model",
+  "furniture_variant",
+  "item_code",
+  "description",
+  "quantity",
+  "width",
+  "height",
+  "depth",
+  "material",
+  "color",
+  "finish",
+  "estimated_rate",
+  "estimated_amount",
+  "customization_required",
+  "remarks"
+ ],
+ "istable": 1,
+ "editable_grid": 1
+}

@@ -1,0 +1,36 @@
+{
+ "doctype": "DocType",
+ "name": "Furniture Job Work Order Reference",
+ "module": "Sales Design",
+ "engine": "InnoDB",
+ "actions": [],
+ "links": [],
+ "states": [],
+ "fields": [
+  {
+   "fieldname": "work_order",
+   "fieldtype": "Data",
+   "label": "Work Order (ERPNext)",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "permissions": [],
+ "field_order": [
+  "work_order",
+  "status",
+  "remarks"
+ ],
+ "istable": 1,
+ "editable_grid": 1
+}

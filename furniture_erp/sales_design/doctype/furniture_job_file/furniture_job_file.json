@@ -1,0 +1,562 @@
+{
+ "doctype": "DocType",
+ "name": "Furniture Job File",
+ "module": "Sales Design",
+ "engine": "InnoDB",
+ "actions": [],
+ "links": [],
+ "states": [],
+ "fields": [
+  {
+   "fieldname": "section_basic_information",
+   "fieldtype": "Section Break",
+   "label": "Basic Information"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "FJF-.YYYY.-.#####",
+   "reqd": 1,
+   "default": "FJF-.YYYY.-.#####"
+  },
+  {
+   "fieldname": "b2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "job_file_title",
+   "fieldtype": "Data",
+   "label": "Job File Title",
+   "reqd": 1,
+   "in_list_view": 1,
+   "bold": 1
+  },
+  {
+   "fieldname": "b3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "job_status",
+   "fieldtype": "Select",
+   "label": "Job Status",
+   "options": "Draft\nRequirement Pending\nSite Survey Pending\nDesign Pending\nCustomer Approval Pending\nQuotation Pending\nQuotation Approved\nSales Order Confirmed\nMaterial Planning\nProduction Pending\nIn Production\nQuality Inspection\nReady for Dispatch\nDispatched\nInstallation In Progress\nCompleted\nClosed\nOn Hold\nCancelled\nRejected",
+   "reqd": 1,
+   "default": "Draft",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Data",
+   "label": "Customer (ERPNext)",
+   "in_standard_filter": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "customer_type",
+   "fieldtype": "Select",
+   "label": "Customer Type",
+   "options": "\nB2B\nB2C"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Data",
+   "label": "Contact Person (ERPNext)"
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company (ERPNext)",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Data",
+   "label": "Branch (ERPNext)"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Data",
+   "label": "Project (ERPNext)"
+  },
+  {
+   "fieldname": "project_manager",
+   "fieldtype": "Data",
+   "label": "Project Manager (ERPNext)",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "job_type",
+   "fieldtype": "Select",
+   "label": "Job Type",
+   "options": "Ready Made\nCustom\nProject",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nUrgent",
+   "default": "Medium"
+  },
+  {
+   "fieldname": "job_creation_date",
+   "fieldtype": "Date",
+   "label": "Job Creation Date",
+   "default": "Today",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "expected_completion_date",
+   "fieldtype": "Date",
+   "label": "Expected Completion Date",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "assigned_to",
+   "fieldtype": "Link",
+   "label": "Assigned To",
+   "options": "User"
+  },
+  {
+   "fieldname": "section_crm_references",
+   "fieldtype": "Section Break",
+   "label": "CRM References"
+  },
+  {
+   "fieldname": "lead",
+   "fieldtype": "Data",
+   "label": "Lead (ERPNext)"
+  },
+  {
+   "fieldname": "crm2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "opportunity",
+   "fieldtype": "Data",
+   "label": "Opportunity (ERPNext)"
+  },
+  {
+   "fieldname": "crm3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_requirement",
+   "fieldtype": "Link",
+   "label": "Customer Requirement",
+   "options": "Furniture Customer Requirement"
+  },
+  {
+   "fieldname": "section_sales_references",
+   "fieldtype": "Section Break",
+   "label": "Sales References"
+  },
+  {
+   "fieldname": "quotation",
+   "fieldtype": "Data",
+   "label": "Quotation (ERPNext)"
+  },
+  {
+   "fieldname": "sales2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Data",
+   "label": "Sales Order (ERPNext)"
+  },
+  {
+   "fieldname": "sales3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sales_person",
+   "fieldtype": "Data",
+   "label": "Sales Person (ERPNext)",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "section_site_information",
+   "fieldtype": "Section Break",
+   "label": "Site Information"
+  },
+  {
+   "fieldname": "installation_site",
+   "fieldtype": "Data",
+   "label": "Installation Site (ERPNext Address)"
+  },
+  {
+   "fieldname": "site2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "site_survey",
+   "fieldtype": "Data",
+   "label": "Site Survey (link later)"
+  },
+  {
+   "fieldname": "site3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "measurement_status",
+   "fieldtype": "Select",
+   "label": "Measurement Status",
+   "options": "\nPending\nIn Progress\nCompleted\nApproved"
+  },
+  {
+   "fieldname": "design_approval_status",
+   "fieldtype": "Select",
+   "label": "Design Approval Status",
+   "options": "\nPending\nIn Review\nApproved\nRejected"
+  },
+  {
+   "fieldname": "section_manufacturing_information",
+   "fieldtype": "Section Break",
+   "label": "Manufacturing Information"
+  },
+  {
+   "fieldname": "production_plan",
+   "fieldtype": "Data",
+   "label": "Production Plan (ERPNext)"
+  },
+  {
+   "fieldname": "production_status",
+   "fieldtype": "Select",
+   "label": "Production Status",
+   "options": "\nPending\nPlanned\nIn Progress\nCompleted\nOn Hold",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "material_status",
+   "fieldtype": "Select",
+   "label": "Material Status",
+   "options": "\nPending\nPartial\nAvailable\nShortage"
+  },
+  {
+   "fieldname": "qc_status",
+   "fieldtype": "Select",
+   "label": "QC Status",
+   "options": "\nPending\nIn Progress\nPassed\nFailed"
+  },
+  {
+   "fieldname": "work_orders",
+   "fieldtype": "Table",
+   "label": "Work Orders",
+   "options": "Furniture Job Work Order Reference"
+  },
+  {
+   "fieldname": "section_delivery_information",
+   "fieldtype": "Section Break",
+   "label": "Delivery Information"
+  },
+  {
+   "fieldname": "dispatch_status",
+   "fieldtype": "Select",
+   "label": "Dispatch Status",
+   "options": "\nPending\nPlanned\nDispatched\nDelivered\nFailed",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "installation_status",
+   "fieldtype": "Select",
+   "label": "Installation Status",
+   "options": "\nPending\nScheduled\nIn Progress\nCompleted\nFailed"
+  },
+  {
+   "fieldname": "installation_completion_date",
+   "fieldtype": "Date",
+   "label": "Installation Completion Date"
+  },
+  {
+   "fieldname": "delivery_notes",
+   "fieldtype": "Table",
+   "label": "Delivery Notes",
+   "options": "Furniture Job Delivery Reference"
+  },
+  {
+   "fieldname": "section_payment_information",
+   "fieldtype": "Section Break",
+   "label": "Payment Information"
+  },
+  {
+   "fieldname": "order_amount",
+   "fieldtype": "Currency",
+   "label": "Order Amount"
+  },
+  {
+   "fieldname": "pay2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "advance_amount",
+   "fieldtype": "Currency",
+   "label": "Advance Amount"
+  },
+  {
+   "fieldname": "pay3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "received_amount",
+   "fieldtype": "Currency",
+   "label": "Received Amount"
+  },
+  {
+   "fieldname": "outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "Outstanding Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "label": "Payment Status",
+   "options": "\nNot Due\nDue\nPartially Paid\nPaid\nOverdue",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "section_closure",
+   "fieldtype": "Section Break",
+   "label": "Closure"
+  },
+  {
+   "fieldname": "completion_date",
+   "fieldtype": "Date",
+   "label": "Completion Date"
+  },
+  {
+   "fieldname": "closed_by",
+   "fieldtype": "Link",
+   "label": "Closed By",
+   "options": "User"
+  },
+  {
+   "fieldname": "internal_remarks",
+   "fieldtype": "Text Editor",
+   "label": "Internal Remarks"
+  },
+  {
+   "fieldname": "customer_remarks",
+   "fieldtype": "Small Text",
+   "label": "Customer Remarks"
+  },
+  {
+   "fieldname": "closure_remarks",
+   "fieldtype": "Small Text",
+   "label": "Closure Remarks"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 1,
+   "print": 1,
+   "email": 0
+  },
+  {
+   "role": "Furniture ERP Administrator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 1,
+   "print": 1,
+   "email": 0
+  },
+  {
+   "role": "Furniture Administrator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 1,
+   "print": 1,
+   "email": 0
+  },
+  {
+   "role": "Furniture Project Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 1,
+   "print": 1,
+   "email": 0
+  },
+  {
+   "role": "Project Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 1,
+   "print": 1,
+   "email": 0
+  },
+  {
+   "role": "Sales Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 1,
+   "print": 1,
+   "email": 0
+  },
+  {
+   "role": "Sales Executive",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 0
+  },
+  {
+   "role": "Management Viewer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 0,
+   "print": 1,
+   "email": 0
+  }
+ ],
+ "field_order": [
+  "section_basic_information",
+  "naming_series",
+  "b2",
+  "job_file_title",
+  "b3",
+  "job_status",
+  "customer",
+  "customer_type",
+  "contact_person",
+  "mobile_number",
+  "email",
+  "company",
+  "branch",
+  "project",
+  "project_manager",
+  "job_type",
+  "priority",
+  "job_creation_date",
+  "expected_completion_date",
+  "assigned_to",
+  "section_crm_references",
+  "lead",
+  "crm2",
+  "opportunity",
+  "crm3",
+  "customer_requirement",
+  "section_sales_references",
+  "quotation",
+  "sales2",
+  "sales_order",
+  "sales3",
+  "sales_person",
+  "section_site_information",
+  "installation_site",
+  "site2",
+  "site_survey",
+  "site3",
+  "measurement_status",
+  "design_approval_status",
+  "section_manufacturing_information",
+  "production_plan",
+  "production_status",
+  "material_status",
+  "qc_status",
+  "work_orders",
+  "section_delivery_information",
+  "dispatch_status",
+  "installation_status",
+  "installation_completion_date",
+  "delivery_notes",
+  "section_payment_information",
+  "order_amount",
+  "pay2",
+  "advance_amount",
+  "pay3",
+  "received_amount",
+  "outstanding_amount",
+  "payment_status",
+  "section_closure",
+  "completion_date",
+  "closed_by",
+  "internal_remarks",
+  "customer_remarks",
+  "closure_remarks"
+ ],
+ "autoname": "naming_series:",
+ "title_field": "job_file_title",
+ "search_fields": "job_file_title,customer,job_type,job_status,sales_person",
+ "track_changes": 1
+}

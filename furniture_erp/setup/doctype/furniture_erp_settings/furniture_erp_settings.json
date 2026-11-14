@@ -21,7 +21,7 @@
    "default": "INR"
   },
   {
-   "fieldname": "col_defaults_2",
+   "fieldname": "d2",
    "fieldtype": "Column Break"
   },
   {
@@ -33,7 +33,7 @@
    "default": "mm"
   },
   {
-   "fieldname": "col_defaults_3",
+   "fieldname": "d3",
    "fieldtype": "Column Break"
   },
   {
@@ -42,6 +42,45 @@
    "label": "Default Area Unit",
    "options": "sq m\nsq ft",
    "default": "sq m"
+  },
+  {
+   "fieldname": "default_furniture_category",
+   "fieldtype": "Link",
+   "label": "Default Furniture Category",
+   "options": "Furniture Category"
+  },
+  {
+   "fieldname": "section_warehouses_(erpnext_codes)",
+   "fieldtype": "Section Break",
+   "label": "Warehouses (ERPNext codes)"
+  },
+  {
+   "fieldname": "default_warehouse_raw",
+   "fieldtype": "Data",
+   "label": "Default Raw Material Warehouse"
+  },
+  {
+   "fieldname": "w2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_warehouse_wip",
+   "fieldtype": "Data",
+   "label": "Default WIP Warehouse"
+  },
+  {
+   "fieldname": "w3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_warehouse_fg",
+   "fieldtype": "Data",
+   "label": "Default Finished Goods Warehouse"
+  },
+  {
+   "fieldname": "default_warehouse_scrap",
+   "fieldtype": "Data",
+   "label": "Default Scrap Warehouse"
   },
   {
    "fieldname": "section_naming_series",
@@ -56,7 +95,7 @@
    "default": "FPF-.#####"
   },
   {
-   "fieldname": "col_ns_2",
+   "fieldname": "ns2",
    "fieldtype": "Column Break"
   },
   {
@@ -67,7 +106,7 @@
    "default": "FMAT-.#####"
   },
   {
-   "fieldname": "col_ns_3",
+   "fieldname": "ns3",
    "fieldtype": "Column Break"
   },
   {
@@ -85,6 +124,24 @@
    "default": "FSPEC-.YYYY.-.#####"
   },
   {
+   "fieldname": "category_naming_hint",
+   "fieldtype": "Data",
+   "label": "Category Code Hint",
+   "default": "CAT-"
+  },
+  {
+   "fieldname": "job_file_naming_series",
+   "fieldtype": "Data",
+   "label": "Job File Naming Series",
+   "default": "FJF-.YYYY.-.#####"
+  },
+  {
+   "fieldname": "requirement_naming_series",
+   "fieldtype": "Data",
+   "label": "Requirement Naming Series",
+   "default": "FCR-.YYYY.-.#####"
+  },
+  {
    "fieldname": "section_catalogue_rules",
    "fieldtype": "Section Break",
    "label": "Catalogue Rules"
@@ -96,7 +153,7 @@
    "default": "1"
   },
   {
-   "fieldname": "col_rules_2",
+   "fieldname": "r2",
    "fieldtype": "Column Break"
   },
   {
@@ -106,7 +163,7 @@
    "default": "1"
   },
   {
-   "fieldname": "col_rules_3",
+   "fieldname": "r3",
    "fieldtype": "Column Break"
   },
   {
@@ -127,6 +184,62 @@
    "default": "0"
   },
   {
+   "fieldname": "section_commercial_rules",
+   "fieldtype": "Section Break",
+   "label": "Commercial Rules"
+  },
+  {
+   "fieldname": "max_discount_percent",
+   "fieldtype": "Percent",
+   "label": "Max Discount Percent Without Approval",
+   "default": "5"
+  },
+  {
+   "fieldname": "com2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "minimum_profit_margin",
+   "fieldtype": "Percent",
+   "label": "Minimum Profit Margin",
+   "default": "10"
+  },
+  {
+   "fieldname": "com3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "required_advance_percent",
+   "fieldtype": "Percent",
+   "label": "Required Advance Percent",
+   "default": "20"
+  },
+  {
+   "fieldname": "default_warranty_period",
+   "fieldtype": "Int",
+   "label": "Default Warranty Period",
+   "default": "12"
+  },
+  {
+   "fieldname": "default_warranty_unit",
+   "fieldtype": "Select",
+   "label": "Default Warranty Unit",
+   "options": "Days\nMonths\nYears",
+   "default": "Months"
+  },
+  {
+   "fieldname": "design_approval_required_for_custom",
+   "fieldtype": "Check",
+   "label": "Design Approval Required for Custom",
+   "default": "1"
+  },
+  {
+   "fieldname": "qc_mandatory_before_dispatch",
+   "fieldtype": "Check",
+   "label": "QC Mandatory Before Dispatch",
+   "default": "1"
+  },
+  {
    "fieldname": "section_integration",
    "fieldtype": "Section Break",
    "label": "Integration"
@@ -138,7 +251,7 @@
    "default": "0"
   },
   {
-   "fieldname": "col_int_2",
+   "fieldname": "i2",
    "fieldtype": "Column Break"
   },
   {
@@ -148,7 +261,7 @@
    "options": "URL"
   },
   {
-   "fieldname": "col_int_3",
+   "fieldname": "i3",
    "fieldtype": "Column Break"
   },
   {
@@ -156,7 +269,7 @@
    "fieldtype": "Small Text",
    "label": "ERPNext Status Note",
    "read_only": 1,
-   "default": "ERPNext is not installed on this site. Company/Item/Warehouse/Customer links are deferred until ERPNext is added."
+   "default": "ERPNext is not installed on this site. Company/Item/Warehouse/Customer links are deferred as Data fields."
   }
  ],
  "permissions": [
@@ -193,6 +306,22 @@
    "email": 0
   },
   {
+   "role": "Furniture Administrator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 1,
+   "print": 1,
+   "email": 0
+  },
+  {
    "role": "Furniture Product Manager",
    "read": 1,
    "write": 0,
@@ -212,34 +341,53 @@
  "field_order": [
   "section_defaults",
   "default_currency",
-  "col_defaults_2",
+  "d2",
   "default_length_unit",
-  "col_defaults_3",
+  "d3",
   "default_area_unit",
+  "default_furniture_category",
+  "section_warehouses_(erpnext_codes)",
+  "default_warehouse_raw",
+  "w2",
+  "default_warehouse_wip",
+  "w3",
+  "default_warehouse_fg",
+  "default_warehouse_scrap",
   "section_naming_series",
   "family_naming_series",
-  "col_ns_2",
+  "ns2",
   "material_naming_series",
-  "col_ns_3",
+  "ns3",
   "finish_naming_series",
   "specification_naming_series",
+  "category_naming_hint",
+  "job_file_naming_series",
+  "requirement_naming_series",
   "section_catalogue_rules",
   "enforce_allowed_materials",
-  "col_rules_2",
+  "r2",
   "enforce_allowed_finishes",
-  "col_rules_3",
+  "r3",
   "allow_draft_spec_duplication",
   "default_gst_hsn_code",
   "spec_requires_approval",
+  "section_commercial_rules",
+  "max_discount_percent",
+  "com2",
+  "minimum_profit_margin",
+  "com3",
+  "required_advance_percent",
+  "default_warranty_period",
+  "default_warranty_unit",
+  "design_approval_required_for_custom",
+  "qc_mandatory_before_dispatch",
   "section_integration",
   "enable_portal_catalogue",
-  "col_int_2",
+  "i2",
   "integration_webhook_url",
-  "col_int_3",
+  "i3",
   "erpnext_note"
  ],
  "issingle": 1,
- "is_submittable": 0,
- "track_changes": 1,
- "icon": "setting"
+ "track_changes": 1
 }
