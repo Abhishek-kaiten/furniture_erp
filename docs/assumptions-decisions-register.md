@@ -14,6 +14,9 @@ Living register for Furniture ERP discovery and delivery. Status: **Proposed** u
 | DEC-006 | — | Variant strategy | Use ERPNext Item + Attributes / Template Items for configurable SKUs; catalogue in `furniture_erp` holds design intent. | Proposed | Avoid duplicate item master. |
 | DEC-007 | — | Multi-warehouse | Factory, finished goods, site/WIP warehouses per company standard ERPNext pattern. | Proposed | Detailed in accounting-stock-design.md. |
 | DEC-008 | — | India Compliance app | Evaluate `india_compliance` (or ERPNext built-in GST for v17) at ERPNext install. | Proposed | Depends on ERPNext version choice. |
+| DEC-009 | 2026-11-14 | Development bench | Implement Master Development Prompt on **`~/carpenter_erp`**, not `~/frappe-bench`. | **Decided** | GitHub app lives on carpenter_erp; frappe-bench has ERPNext v16 incompatible with Frappe 17. |
+| DEC-010 | 2026-11-14 | Phase 2 ERPNext fields | Store ERPNext targets as **Data** placeholders; convert via patch after DEC-002. | **Decided** | See `docs/phase2-field-map.md`. |
+| DEC-011 | 2026-11-14 | Product Family vs Category | Keep **Furniture Product Family**; add **Furniture Category / Model / Variant** per Master Prompt §4. | **Decided** | Family remains allowlist helper; Category is commercial taxonomy. |
 
 ## Assumptions
 

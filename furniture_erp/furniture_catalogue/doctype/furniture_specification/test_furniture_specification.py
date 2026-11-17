@@ -7,29 +7,30 @@ from frappe.tests.utils import FrappeTestCase
 
 class TestFurnitureSpecification(FrappeTestCase):
 	def setUp(self):
+		suffix = frappe.generate_hash(length=6).upper()
 		self.material = frappe.get_doc(
 			{
 				"doctype": "Furniture Material",
-				"material_name": "Test Plywood 18mm",
+				"material_name": f"Test Plywood {suffix}",
+				"material_code": f"MAT-SPEC-{suffix}",
 				"material_type": "Plywood",
-				"status": "Active",
+				"active": 1,
 				"uom": "Sheet",
-				"naming_series": "FMAT-.#####",
 			}
 		).insert()
 		self.finish = frappe.get_doc(
 			{
 				"doctype": "Furniture Finish",
-				"finish_name": "Test Walnut Laminate",
+				"finish_name": f"Test Finish {suffix}",
+				"finish_code": f"FIN-SPEC-{suffix}",
 				"finish_type": "Laminate",
-				"status": "Active",
-				"naming_series": "FFIN-.#####",
+				"active": 1,
 			}
 		).insert()
 		self.family = frappe.get_doc(
 			{
 				"doctype": "Furniture Product Family",
-				"family_name": "Test Wardrobe",
+				"family_name": f"Test Wardrobe {suffix}",
 				"status": "Active",
 				"product_category": "Storage",
 				"construction_type": "Panel",
@@ -41,14 +42,15 @@ class TestFurnitureSpecification(FrappeTestCase):
 		).insert()
 
 	def test_reject_non_allowed_material(self):
+		suffix = frappe.generate_hash(length=6).upper()
 		other = frappe.get_doc(
 			{
 				"doctype": "Furniture Material",
-				"material_name": "Blocked MDF",
+				"material_name": f"Blocked MDF {suffix}",
+				"material_code": f"MAT-BLOCK-{suffix}",
 				"material_type": "MDF",
-				"status": "Active",
+				"active": 1,
 				"uom": "Sheet",
-				"naming_series": "FMAT-.#####",
 			}
 		).insert()
 		settings = frappe.get_single("Furniture ERP Settings")
@@ -85,7 +87,6 @@ class TestFurnitureSpecification(FrappeTestCase):
 				"depth_mm": 600,
 				"height_mm": 2100,
 				"primary_material": self.material.name,
-				# missing primary_finish intentionally via delete after init
 			}
 		)
 		doc.primary_finish = None

@@ -1,0 +1,53 @@
+{
+ "doctype": "DocType",
+ "name": "Furniture Configuration Option",
+ "module": "Furniture Catalogue",
+ "engine": "InnoDB",
+ "actions": [],
+ "links": [],
+ "states": [],
+ "fields": [
+  {
+   "fieldname": "option_name",
+   "fieldtype": "Data",
+   "label": "Option Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "option_type",
+   "fieldtype": "Select",
+   "label": "Option Type",
+   "options": "\nSize\nColor\nMaterial\nFabric\nFinish\nModular\nOther",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "option_value",
+   "fieldtype": "Data",
+   "label": "Option Value",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "additional_price",
+   "fieldtype": "Currency",
+   "label": "Additional Price",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "default_option",
+   "fieldtype": "Check",
+   "label": "Default Option",
+   "in_list_view": 1
+  }
+ ],
+ "permissions": [],
+ "field_order": [
+  "option_name",
+  "option_type",
+  "option_value",
+  "additional_price",
+  "default_option"
+ ],
+ "istable": 1,
+ "editable_grid": 1
+}

@@ -6,5 +6,14 @@ from frappe.model.document import Document
 
 
 class FurnitureFinish(Document):
-	pass
+
+	def before_naming(self):
+		if self.finish_code:
+			self.finish_code = self.finish_code.strip().upper()
+
+	def validate(self):
+		if self.finish_code:
+			self.finish_code = self.finish_code.strip().upper()
+		if self.active is not None:
+			self.status = "Active" if self.active else "Inactive"
 
