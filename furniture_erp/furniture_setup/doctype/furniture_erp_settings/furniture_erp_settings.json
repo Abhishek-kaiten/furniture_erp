@@ -1,7 +1,7 @@
 {
  "doctype": "DocType",
  "name": "Furniture ERP Settings",
- "module": "Setup",
+ "module": "Furniture Setup",
  "engine": "InnoDB",
  "actions": [],
  "links": [],
@@ -56,8 +56,9 @@
   },
   {
    "fieldname": "default_warehouse_raw",
-   "fieldtype": "Data",
-   "label": "Default Raw Material Warehouse"
+   "fieldtype": "Link",
+   "label": "Default Raw Material Warehouse",
+   "options": "Warehouse"
   },
   {
    "fieldname": "w2",
@@ -65,8 +66,9 @@
   },
   {
    "fieldname": "default_warehouse_wip",
-   "fieldtype": "Data",
-   "label": "Default WIP Warehouse"
+   "fieldtype": "Link",
+   "label": "Default WIP Warehouse",
+   "options": "Warehouse"
   },
   {
    "fieldname": "w3",
@@ -74,13 +76,15 @@
   },
   {
    "fieldname": "default_warehouse_fg",
-   "fieldtype": "Data",
-   "label": "Default Finished Goods Warehouse"
+   "fieldtype": "Link",
+   "label": "Default Finished Goods Warehouse",
+   "options": "Warehouse"
   },
   {
    "fieldname": "default_warehouse_scrap",
-   "fieldtype": "Data",
-   "label": "Default Scrap Warehouse"
+   "fieldtype": "Link",
+   "label": "Default Scrap Warehouse",
+   "options": "Warehouse"
   },
   {
    "fieldname": "section_naming_series",

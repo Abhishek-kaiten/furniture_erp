@@ -9,11 +9,11 @@
 
 | Bench | Frappe | ERPNext | furniture_erp |
 |-------|--------|---------|---------------|
-| `~/carpenter_erp` | **17.0.0-dev** | **Not installed** | Yes (active) |
-| `~/carpenter_erp_test` | 17.0.0-dev | Not installed | Yes |
+| `~/carpenter_erp` | **17.0.0-dev** | **17.x develop** (Phase 3) | Yes (active) |
+| `~/carpenter_erp_test` | 17.0.0-dev | **17.x develop** (Phase 3) | Yes |
 | `~/frappe-bench` | 16.31.0 | 16.32.3 (+ hrms, india_compliance, kaiten_erp) | Listed in apps.txt but **no app folder** |
 
-**Conflict:** Installing ERPNext v16 on Frappe 17 is incompatible. ERPNext for Frappe 17 would need a matching develop/v17 track. Until ERPNext is installed on this bench, **all Link fields to Item, Customer, Lead, Supplier, Company, UOM, Employee, Brand, Warehouse, etc. are implemented as forward-compatible Data / deferred Links** and documented as **BLOCKED**.
+**DEC-002 complete (2026-11-18):** ERPNext `develop` installed on both benches. Phase 3 converts deferred Data fields to Links and adds CRM/Sales custom fields. Do not use ERPNext v16 from `frappe-bench` on this Frappe 17 stack.
 
 ## Existing furniture_erp DocTypes (keep / extend)
 
@@ -33,8 +33,8 @@
 |------|--------|
 | Phase 2 Masters (Category, Model, Variant, Design, Color, Config) | **Implementing now** |
 | Enhance Material / Finish | **Implementing now** |
-| Lead/Opportunity/Quotation/SO custom fields | **BLOCKED** (needs ERPNext) |
-| Customer Requirement, Job File | Implement structure; ERPNext links as Data until DEC-002 |
+| Lead/Opportunity/Quotation/SO custom fields | **Phase 3 done** |
+| Customer Requirement, Job File | **Phase 3:** Links + hub APIs |
 | Purchase / Stock / WO / QC / Delivery / Payment / Warranty | Pending phases 7–12; ERPNext required |
 | Reports / Workspace | Partial workspace for masters now |
 | Workflows / Notifications | After DocTypes stable + ERPNext |

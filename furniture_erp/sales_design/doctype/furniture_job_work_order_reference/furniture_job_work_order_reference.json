@@ -9,9 +9,10 @@
  "fields": [
   {
    "fieldname": "work_order",
-   "fieldtype": "Data",
-   "label": "Work Order (ERPNext)",
-   "in_list_view": 1
+   "fieldtype": "Link",
+   "label": "Work Order",
+   "in_list_view": 1,
+   "options": "Work Order"
   },
   {
    "fieldname": "status",

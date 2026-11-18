@@ -4,13 +4,13 @@ External systems and integration points. Priority: **P0** critical path, **P1** 
 
 ## Current state
 
-No integrations implemented. `furniture_erp` hooks contain no `doc_events`, webhooks, or scheduled sync jobs.
+Phase 3: ERPNext same-site integration via Custom Fields + `doc_events` on Quotation / Sales Order. No external webhooks yet.
 
 ## Register
 
 | ID | System | Direction | Protocol | Trigger | Data | Priority | Milestone | Status |
 |----|--------|-----------|----------|---------|------|----------|-----------|--------|
-| INT-01 | ERPNext (same site) | Internal | Frappe ORM | Doc save/submit | Item, BOM, SO, stock | P0 | M0.5 | **Blocked** (not installed) |
+| INT-01 | ERPNext (same site) | Internal | Frappe ORM | Doc save/submit | Lead, Opportunity, Customer, Quotation, SO (+ Item later) | P0 | Phase 3 | **Active** (CRM/Sales); stock/BOM later phases |
 | INT-02 | India GST / e-Invoice | Outbound | API (compliance app) | Sales Invoice submit | IRN, QR | P0 | M3 | Planned |
 | INT-03 | Payment gateway (Razorpay / etc.) | Inbound | REST webhook | Payment | Payment Entry | P1 | M7 | Deferred |
 | INT-04 | Logistics (Delhivery / etc.) | Outbound | REST | DN submit | AWB, tracking | P2 | M8 | Deferred |

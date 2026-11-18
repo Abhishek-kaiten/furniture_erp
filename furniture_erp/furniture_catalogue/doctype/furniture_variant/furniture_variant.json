@@ -53,8 +53,9 @@
   },
   {
    "fieldname": "item_code",
-   "fieldtype": "Data",
-   "label": "Item Code (ERPNext)"
+   "fieldtype": "Link",
+   "label": "Item Code",
+   "options": "Item"
   },
   {
    "fieldname": "color",

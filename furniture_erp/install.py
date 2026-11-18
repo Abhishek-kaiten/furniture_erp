@@ -56,11 +56,40 @@ CUSTOM_ROLES = [
 def after_install():
 	_ensure_roles()
 	_seed_settings_defaults()
+	_sync_erpnext_custom_fields()
+	_ensure_furniture_uoms()
 
 
 def after_migrate():
 	_ensure_roles()
 	_seed_settings_defaults()
+	_sync_erpnext_custom_fields()
+	_ensure_furniture_uoms()
+
+
+def before_tests():
+	_ensure_roles()
+	_ensure_furniture_uoms()
+
+
+def _sync_erpnext_custom_fields():
+	if "erpnext" not in frappe.get_installed_apps():
+		return
+	from furniture_erp.sales_design.custom_fields import sync_custom_fields
+
+	sync_custom_fields()
+
+
+def _ensure_furniture_uoms():
+	"""UOMs used by catalogue masters / tests after Link conversion."""
+	if "erpnext" not in frappe.get_installed_apps():
+		return
+	if not frappe.db.exists("DocType", "UOM"):
+		return
+	for name in ("Nos", "Sheet", "Kg", "Meter", "Litre", "Set", "Box"):
+		if frappe.db.exists("UOM", name):
+			continue
+		frappe.get_doc({"doctype": "UOM", "uom_name": name}).insert(ignore_permissions=True)
 
 
 def _ensure_roles():

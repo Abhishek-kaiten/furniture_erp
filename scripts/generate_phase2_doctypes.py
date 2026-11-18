@@ -727,7 +727,7 @@ def enhance_settings():
 	write_doctype(
 		setup,
 		"Furniture ERP Settings",
-		{"module": "Setup", "issingle": 1, "track_changes": 1},
+		{"module": "Furniture Setup", "issingle": 1, "track_changes": 1},
 		fields,
 		[
 			perm("System Manager", write=1, create=1, delete=1, share=1),

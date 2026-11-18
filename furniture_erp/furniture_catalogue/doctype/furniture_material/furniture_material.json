@@ -60,13 +60,15 @@
   },
   {
    "fieldname": "item_code",
-   "fieldtype": "Data",
-   "label": "Item Code (ERPNext)"
+   "fieldtype": "Link",
+   "label": "Item Code",
+   "options": "Item"
   },
   {
    "fieldname": "supplier",
-   "fieldtype": "Data",
-   "label": "Supplier (ERPNext)"
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
   },
   {
    "fieldname": "status",
@@ -84,9 +86,10 @@
   },
   {
    "fieldname": "linked_item_code",
-   "fieldtype": "Data",
-   "label": "Linked Item Code (ERPNext)",
-   "hidden": 1
+   "fieldtype": "Link",
+   "label": "Linked Item",
+   "hidden": 1,
+   "options": "Item"
   },
   {
    "fieldname": "section_physical",
@@ -141,9 +144,9 @@
   },
   {
    "fieldname": "uom",
-   "fieldtype": "Select",
-   "label": "Unit",
-   "options": "Nos\nSq Meter\nMeter\nKg\nSheet\nRoll",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM",
    "reqd": 1,
    "default": "Nos"
   },
