@@ -6,8 +6,8 @@ Living register for Furniture ERP discovery and delivery. Status: **Proposed** u
 
 | ID | Date | Topic | Decision | Status | Rationale / impact |
 |----|------|-------|----------|--------|-------------------|
-| DEC-001 | 2025-11-14 | ERPNext installation | **ERPNext is not installed** on site `carpenter`. Target architecture assumes ERPNext will be installed before transactional milestones (SO, stock, GL). | **Decided (environment fact)** | Blocks reuse of Customer, Item, BOM, SO, PO, Stock Entry, Payment Entry, GST. All related requirements **blocked** until DEC-002. |
-| DEC-002 | — | ERPNext install gate | Install ERPNext version compatible with Frappe 17 on `carpenter` and `test_carpenter`, add `required_apps`. | Proposed | Unblocks standard-vs-custom matrix execution. |
+| DEC-001 | 2025-11-14 | ERPNext installation | Historical: ERPNext was not installed at M0. Superseded by DEC-002. | **Superseded** | See DEC-002. |
+| DEC-002 | 2026-11-18 | ERPNext install gate | Install ERPNext **`develop`** on `carpenter` and `test_carpenter`; set `required_apps = ["erpnext"]`. See `docs/erpnext-install-notes.md`. | **Decided** | Unblocks Phase 3 CRM/Sales Links and custom fields. india_compliance still DEC-008. |
 | DEC-003 | 2025-11-14 | Requirements source | **No formal BRD** supplied. Master Build Prompt v1.0 is baseline; gaps flagged in traceability CSV. | **Decided (discovery)** | Legal/commercial scope not contractually frozen. |
 | DEC-004 | 2025-11-14 | Tax jurisdiction | **India (GST)** assumed as default for tax templates, HSN, place of supply. | Proposed (pending confirmation) | Drives Item tax templates, e-invoice/e-way assumptions in accounting-stock-design.md. |
 | DEC-005 | 2025-11-14 | App naming | Package `furniture_erp`, display **Furniture ERP**; module folder `Furniture_erp` until renamed. | Decided | Align UI strings in M1. |
@@ -15,7 +15,8 @@ Living register for Furniture ERP discovery and delivery. Status: **Proposed** u
 | DEC-007 | — | Multi-warehouse | Factory, finished goods, site/WIP warehouses per company standard ERPNext pattern. | Proposed | Detailed in accounting-stock-design.md. |
 | DEC-008 | — | India Compliance app | Evaluate `india_compliance` (or ERPNext built-in GST for v17) at ERPNext install. | Proposed | Depends on ERPNext version choice. |
 | DEC-009 | 2026-11-14 | Development bench | Implement Master Development Prompt on **`~/carpenter_erp`**, not `~/frappe-bench`. | **Decided** | GitHub app lives on carpenter_erp; frappe-bench has ERPNext v16 incompatible with Frappe 17. |
-| DEC-010 | 2026-11-14 | Phase 2 ERPNext fields | Store ERPNext targets as **Data** placeholders; convert via patch after DEC-002. | **Decided** | See `docs/phase2-field-map.md`. |
+| DEC-010 | 2026-11-14 | Phase 2 ERPNext fields | Store ERPNext targets as **Data** placeholders; convert via patch after DEC-002. | **Decided (executed Phase 3)** | Patch `convert_erpnext_data_to_link`; see `docs/phase2-field-map.md`. |
+| DEC-012 | 2026-11-18 | Module rename | Rename furniture modules **Setup → Furniture Setup**, **Manufacturing → Furniture Manufacturing** to avoid ERPNext Module Def collisions. | **Decided** | Required before `install-app erpnext`. |
 | DEC-011 | 2026-11-14 | Product Family vs Category | Keep **Furniture Product Family**; add **Furniture Category / Model / Variant** per Master Prompt §4. | **Decided** | Family remains allowlist helper; Category is commercial taxonomy. |
 
 ## Assumptions

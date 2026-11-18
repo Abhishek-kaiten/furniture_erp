@@ -394,7 +394,7 @@ def main():
 		setup,
 		"Furniture ERP Settings",
 		{
-			"module": "Setup",
+			"module": "Furniture Setup",
 			"issingle": 1,
 			"is_submittable": 0,
 			"track_changes": 1,

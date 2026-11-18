@@ -11,10 +11,10 @@ class TestFurnitureJobFile(FrappeTestCase):
 			{
 				"doctype": "Furniture Customer Requirement",
 				"naming_series": "FCR-.YYYY.-.#####",
-				"customer": "Demo Customer",
 				"requirement_date": frappe.utils.today(),
 				"requirement_type": "Custom",
 				"status": "Draft",
+				"project_name": "Demo Custom Wardrobe",
 				"requirement_items": [
 					{
 						"description": "Wardrobe",
@@ -25,13 +25,13 @@ class TestFurnitureJobFile(FrappeTestCase):
 			}
 		).insert()
 		self.assertEqual(req.requirement_items[0].estimated_amount, 50000)
+		self.assertEqual(req.total_estimated_amount, 50000)
 
 		job = frappe.get_doc(
 			{
 				"doctype": "Furniture Job File",
 				"naming_series": "FJF-.YYYY.-.#####",
 				"job_file_title": "Demo Custom Wardrobe Job",
-				"customer": "Demo Customer",
 				"job_type": "Custom",
 				"job_status": "Draft",
 				"customer_requirement": req.name,

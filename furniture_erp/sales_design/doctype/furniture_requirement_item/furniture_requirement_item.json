@@ -29,9 +29,38 @@
    "in_list_view": 1
   },
   {
+   "fieldname": "furniture_product_family",
+   "fieldtype": "Link",
+   "label": "Product Family",
+   "options": "Furniture Product Family"
+  },
+  {
+   "fieldname": "furniture_design",
+   "fieldtype": "Link",
+   "label": "Furniture Design",
+   "options": "Furniture Design"
+  },
+  {
+   "fieldname": "length",
+   "fieldtype": "Float",
+   "label": "Length"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "customization_details",
+   "fieldtype": "Small Text",
+   "label": "Customization Details"
+  },
+  {
    "fieldname": "item_code",
-   "fieldtype": "Data",
-   "label": "Item Code (ERPNext)"
+   "fieldtype": "Link",
+   "label": "Item Code",
+   "options": "Item"
   },
   {
    "fieldname": "description",
@@ -108,6 +137,11 @@
   "furniture_category",
   "furniture_model",
   "furniture_variant",
+  "customization_details",
+  "uom",
+  "length",
+  "furniture_design",
+  "furniture_product_family",
   "item_code",
   "description",
   "quantity",

@@ -48,10 +48,11 @@
   },
   {
    "fieldname": "customer",
-   "fieldtype": "Data",
-   "label": "Customer (ERPNext)",
+   "fieldtype": "Link",
+   "label": "Customer",
    "in_standard_filter": 1,
-   "in_list_view": 1
+   "in_list_view": 1,
+   "options": "Customer"
   },
   {
    "fieldname": "customer_type",
@@ -61,8 +62,9 @@
   },
   {
    "fieldname": "contact_person",
-   "fieldtype": "Data",
-   "label": "Contact Person (ERPNext)"
+   "fieldtype": "Link",
+   "label": "Contact Person",
+   "options": "Contact"
   },
   {
    "fieldname": "mobile_number",
@@ -76,9 +78,10 @@
   },
   {
    "fieldname": "company",
-   "fieldtype": "Data",
-   "label": "Company (ERPNext)",
-   "in_standard_filter": 1
+   "fieldtype": "Link",
+   "label": "Company",
+   "in_standard_filter": 1,
+   "options": "Company"
   },
   {
    "fieldname": "branch",
@@ -87,14 +90,16 @@
   },
   {
    "fieldname": "project",
-   "fieldtype": "Data",
-   "label": "Project (ERPNext)"
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
   },
   {
    "fieldname": "project_manager",
-   "fieldtype": "Data",
-   "label": "Project Manager (ERPNext)",
-   "in_standard_filter": 1
+   "fieldtype": "Link",
+   "label": "Project Manager",
+   "in_standard_filter": 1,
+   "options": "Employee"
   },
   {
    "fieldname": "job_type",
@@ -124,6 +129,21 @@
    "in_standard_filter": 1
   },
   {
+   "fieldname": "project_location",
+   "fieldtype": "Data",
+   "label": "Project Location"
+  },
+  {
+   "fieldname": "progress_percentage",
+   "fieldtype": "Percent",
+   "label": "Progress Percentage"
+  },
+  {
+   "fieldname": "project_value",
+   "fieldtype": "Currency",
+   "label": "Project Value"
+  },
+  {
    "fieldname": "assigned_to",
    "fieldtype": "Link",
    "label": "Assigned To",
@@ -136,8 +156,9 @@
   },
   {
    "fieldname": "lead",
-   "fieldtype": "Data",
-   "label": "Lead (ERPNext)"
+   "fieldtype": "Link",
+   "label": "Lead",
+   "options": "Lead"
   },
   {
    "fieldname": "crm2",
@@ -145,8 +166,9 @@
   },
   {
    "fieldname": "opportunity",
-   "fieldtype": "Data",
-   "label": "Opportunity (ERPNext)"
+   "fieldtype": "Link",
+   "label": "Opportunity",
+   "options": "Opportunity"
   },
   {
    "fieldname": "crm3",
@@ -165,8 +187,9 @@
   },
   {
    "fieldname": "quotation",
-   "fieldtype": "Data",
-   "label": "Quotation (ERPNext)"
+   "fieldtype": "Link",
+   "label": "Quotation",
+   "options": "Quotation"
   },
   {
    "fieldname": "sales2",
@@ -174,8 +197,9 @@
   },
   {
    "fieldname": "sales_order",
-   "fieldtype": "Data",
-   "label": "Sales Order (ERPNext)"
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order"
   },
   {
    "fieldname": "sales3",
@@ -183,9 +207,10 @@
   },
   {
    "fieldname": "sales_person",
-   "fieldtype": "Data",
-   "label": "Sales Person (ERPNext)",
-   "in_standard_filter": 1
+   "fieldtype": "Link",
+   "label": "Sales Person",
+   "in_standard_filter": 1,
+   "options": "Sales Person"
   },
   {
    "fieldname": "section_site_information",
@@ -194,8 +219,9 @@
   },
   {
    "fieldname": "installation_site",
-   "fieldtype": "Data",
-   "label": "Installation Site (ERPNext Address)"
+   "fieldtype": "Link",
+   "label": "Installation Site",
+   "options": "Address"
   },
   {
    "fieldname": "site2",
@@ -229,8 +255,9 @@
   },
   {
    "fieldname": "production_plan",
-   "fieldtype": "Data",
-   "label": "Production Plan (ERPNext)"
+   "fieldtype": "Link",
+   "label": "Production Plan",
+   "options": "Production Plan"
   },
   {
    "fieldname": "production_status",
@@ -326,6 +353,16 @@
    "label": "Payment Status",
    "options": "\nNot Due\nDue\nPartially Paid\nPaid\nOverdue",
    "in_standard_filter": 1
+  },
+  {
+   "fieldname": "section_hub",
+   "fieldtype": "Section Break",
+   "label": "Linked Documents"
+  },
+  {
+   "fieldname": "linked_documents_html",
+   "fieldtype": "HTML",
+   "label": "Linked Documents"
   },
   {
    "fieldname": "section_closure",
@@ -487,6 +524,22 @@
    "share": 0,
    "print": 1,
    "email": 0
+  },
+  {
+   "role": "Sales User",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 1,
+   "print": 1,
+   "email": 0
   }
  ],
  "field_order": [
@@ -509,6 +562,9 @@
   "priority",
   "job_creation_date",
   "expected_completion_date",
+  "project_value",
+  "progress_percentage",
+  "project_location",
   "assigned_to",
   "section_crm_references",
   "lead",
@@ -548,6 +604,8 @@
   "received_amount",
   "outstanding_amount",
   "payment_status",
+  "section_hub",
+  "linked_documents_html",
   "section_closure",
   "completion_date",
   "closed_by",

@@ -1,8 +1,8 @@
-Setup
+Furniture Setup
 Furniture Catalogue
 Sales Design
 Procurement
-Manufacturing
+Furniture Manufacturing
 Inventory
 Quality
 Delivery Installation

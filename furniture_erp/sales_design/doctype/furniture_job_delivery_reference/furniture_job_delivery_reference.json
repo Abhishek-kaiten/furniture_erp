@@ -9,9 +9,10 @@
  "fields": [
   {
    "fieldname": "delivery_note",
-   "fieldtype": "Data",
-   "label": "Delivery Note (ERPNext)",
-   "in_list_view": 1
+   "fieldtype": "Link",
+   "label": "Delivery Note",
+   "in_list_view": 1,
+   "options": "Delivery Note"
   },
   {
    "fieldname": "status",

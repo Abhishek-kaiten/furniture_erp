@@ -12,8 +12,8 @@ use_json_request_body = True
 # Apps
 # ------------------
 
-# ERPNext will be declared once installed on the site (see docs/assumptions-decisions-register.md).
-# required_apps = ["erpnext"]
+# ERPNext is required from Phase 3 (DEC-002).
+required_apps = ["erpnext"]
 
 # Each item in the list will be shown as an app in the apps page
 add_to_apps_screen = [
@@ -56,7 +56,12 @@ add_to_apps_screen = [
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {
+	"Lead": "public/js/lead.js",
+	"Opportunity": "public/js/opportunity.js",
+	"Quotation": "public/js/quotation.js",
+	"Sales Order": "public/js/sales_order.js",
+}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_kanban_js = {"doctype" : "public/js/doctype_kanban.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -183,13 +188,84 @@ after_migrate = "furniture_erp.install.after_migrate"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"Quotation": {
+		"on_update": "furniture_erp.sales_design.api.sync_job_file_from_quotation",
+		"on_submit": "furniture_erp.sales_design.api.sync_job_file_from_quotation",
+	},
+	"Sales Order": {
+		"on_update": "furniture_erp.sales_design.api.sync_job_file_from_sales_order",
+		"on_submit": "furniture_erp.sales_design.api.sync_job_file_from_sales_order",
+	},
+}
+
+fixtures = [
+	{
+		"dt": "Custom Field",
+		"filters": [
+			[
+				"name",
+				"in",
+				[
+					"Lead-furniture_section",
+					"Lead-furniture_business_type",
+					"Lead-requirement_category",
+					"Lead-interested_furniture_models",
+					"Lead-preferred_material",
+					"Lead-preferred_finish",
+					"Lead-approximate_budget",
+					"Lead-project_location",
+					"Lead-expected_purchase_date",
+					"Lead-requirement_summary",
+					"Lead-furniture_job_file",
+					"Opportunity-furniture_section",
+					"Opportunity-furniture_customer_requirement",
+					"Opportunity-furniture_project_type",
+					"Opportunity-furniture_project_budget",
+					"Opportunity-furniture_project_timeline",
+					"Opportunity-furniture_project_location",
+					"Opportunity-expected_furniture_value",
+					"Opportunity-furniture_job_file",
+					"Customer-furniture_section",
+					"Customer-furniture_customer_type",
+					"Customer-furniture_project_category",
+					"Customer-furniture_site_address",
+					"Customer-furniture_preferred_communication",
+					"Customer-furniture_customer_classification",
+					"Customer-furniture_customer_since",
+					"Quotation-furniture_section",
+					"Quotation-furniture_job_file",
+					"Quotation-furniture_customer_requirement",
+					"Quotation-furniture_design_reference",
+					"Quotation-furniture_site_survey_reference",
+					"Quotation-furniture_project_type",
+					"Quotation-furniture_design_revision",
+					"Quotation-furniture_installation_required",
+					"Quotation-furniture_warranty_period",
+					"Quotation-furniture_customization_notes",
+					"Quotation Item-furniture_category",
+					"Quotation Item-furniture_model",
+					"Quotation Item-furniture_variant",
+					"Quotation Item-furniture_material",
+					"Quotation Item-furniture_finish",
+					"Quotation Item-furniture_color",
+					"Quotation Item-furniture_length",
+					"Quotation Item-furniture_width",
+					"Quotation Item-furniture_height",
+					"Sales Order-furniture_section",
+					"Sales Order-furniture_job_file",
+					"Sales Order-furniture_customer_requirement",
+					"Sales Order-furniture_approved_design",
+					"Sales Order-furniture_project_manager",
+					"Sales Order-furniture_project_delivery_date",
+					"Sales Order-furniture_installation_required",
+					"Sales Order-furniture_payment_terms_reference",
+					"Sales Order-furniture_warranty_reference",
+				],
+			]
+		],
+	}
+]
 
 # Scheduled Tasks
 # ---------------
@@ -215,7 +291,7 @@ after_migrate = "furniture_erp.install.after_migrate"
 # Testing
 # -------
 
-# before_tests = "furniture_erp.install.before_tests"
+before_tests = "furniture_erp.install.before_tests"
 
 # Extend DocType Class
 # ------------------------------

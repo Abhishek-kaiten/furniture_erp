@@ -49,22 +49,25 @@
   },
   {
    "fieldname": "customer",
-   "fieldtype": "Data",
-   "label": "Customer (ERPNext)",
+   "fieldtype": "Link",
+   "label": "Customer",
    "in_standard_filter": 1,
-   "in_list_view": 1
+   "in_list_view": 1,
+   "options": "Customer"
   },
   {
    "fieldname": "lead",
-   "fieldtype": "Data",
-   "label": "Lead (ERPNext)",
-   "in_standard_filter": 1
+   "fieldtype": "Link",
+   "label": "Lead",
+   "in_standard_filter": 1,
+   "options": "Lead"
   },
   {
    "fieldname": "opportunity",
-   "fieldtype": "Data",
-   "label": "Opportunity (ERPNext)",
-   "in_standard_filter": 1
+   "fieldtype": "Link",
+   "label": "Opportunity",
+   "in_standard_filter": 1,
+   "options": "Opportunity"
   },
   {
    "fieldname": "furniture_job_file",
@@ -107,6 +110,29 @@
    "fieldname": "preferred_delivery_date",
    "fieldtype": "Date",
    "label": "Preferred Delivery Date"
+  },
+  {
+   "fieldname": "project_location",
+   "fieldtype": "Data",
+   "label": "Project Location"
+  },
+  {
+   "fieldname": "site_address",
+   "fieldtype": "Link",
+   "label": "Site Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "total_estimated_amount",
+   "fieldtype": "Currency",
+   "label": "Total Estimated Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_quantity",
+   "fieldtype": "Float",
+   "label": "Total Quantity",
+   "read_only": 1
   },
   {
    "fieldname": "assigned_to",
@@ -270,6 +296,22 @@
    "share": 0,
    "print": 1,
    "email": 0
+  },
+  {
+   "role": "Sales User",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "import": 0,
+   "share": 1,
+   "print": 1,
+   "email": 0
   }
  ],
  "field_order": [
@@ -289,6 +331,10 @@
   "priority",
   "customer_budget",
   "preferred_delivery_date",
+  "total_quantity",
+  "total_estimated_amount",
+  "site_address",
+  "project_location",
   "assigned_to",
   "requirement_description",
   "attachments",

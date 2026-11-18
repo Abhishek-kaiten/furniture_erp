@@ -4,6 +4,7 @@
 
 [post_model_sync]
 # Patches added in this section will be executed after doctypes are migrated
+furniture_erp.patches.v1_0.convert_erpnext_data_to_link
 
 [post_fixture_sync]
 # Patches added in this section will be executed after fixtures and customizations

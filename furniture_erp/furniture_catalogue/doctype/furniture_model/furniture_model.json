@@ -60,13 +60,15 @@
   },
   {
    "fieldname": "brand",
-   "fieldtype": "Data",
-   "label": "Brand (ERPNext)"
+   "fieldtype": "Link",
+   "label": "Brand",
+   "options": "Brand"
   },
   {
    "fieldname": "item_code",
-   "fieldtype": "Data",
-   "label": "Item Code (ERPNext)"
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item"
   },
   {
    "fieldname": "description",
